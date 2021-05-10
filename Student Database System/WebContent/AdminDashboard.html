@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Dashboard</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="./Resources/css/AdminDashboards.css">
+
+</head>
+<body>
+	<div class="banner" id="dashboard">
+		<div class="nav-bar">
+			<div class="nav-links">
+				<ul>
+					<a href="ViewServlet"><li>View Students detail</li></a>
+					<a href="Delete.html"><li>Delete Student</li></a>
+					<a href="ViewCourseServlet"><li>View Courses</li></a>
+					<button id='addbtn'>
+						<li>Add Course</li> </a>
+						<button id='deletebtn'>
+							<li>Delete Course</li> </a> <a href="Login1.html"><li>Log
+									Out</li></a>
+				</ul>
+			</div>
+		</div>
+		<div class="banner-title">
+			<h1>
+				Welcome <span>To </br> Admin Dashboard
+				</span>
+			</h1>
+
+		</div>
+
+	</div>
+
+
+
+
+
+	<!--  Delete Course -->
+
+	<div class="main" id="deletecourse">
+		<div class="register">
+			<h2>Delete Course</h2>
+			<form action="DeleteCourseServlet" id="register" method="post">
+				<label>Course Id</label> <br> <input type="text"
+					name="courseid" id="name" placeholder="Enter Course Id"> <br>
+				<br>
+				<center>
+					<input type="submit" id="submit" value=Delete>
+				</center>
+			</form>
+		</div>
+	</div>
+
+
+
+
+
+	<!--  Add Course -->
+	<div class="mainadd" id="addcourse">
+		<div class="registeradd">
+			<h3>Add Course</h3>
+			<form action="AddCourseServlet" id="registers" method="post">
+				<label>Course Name</label> <br> <input type="text"
+					name="coursename" id="names" placeholder="Enter Student Name">
+				<br> <br> <label>Course fees</label> <br> <input
+					type="text" name="coursefees" id="names"
+					placeholder="Enter Student D.O.B"> <br> <br> <label>Course
+					Duration</label> <br> <input type="text" name="courseduration"
+					id="names" placeholder="Enter Course Duration in years"> <br>
+				<br> <input type="submit" id="submits" value="Register">
+			</form>
+		</div>
+	</div>
+
+	<!--  JQuery  -->
+
+	<script>
+		$(document).ready(function() {
+
+			$('#deletecourse').hide();
+			$('#addcourse').hide();
+			$('#dashboard').show();
+		});
+
+		$('#addbtn').click(function() {
+			$('#deletecourse').hide();
+			$('#addcourse').show();
+			$('#dashboard').hide();
+		});
+
+		$('#deletebtn').click(function() {
+
+			$('#deletecourse').show();
+			$('#addcourse').hide();
+			$('#dashboard').hide();
+
+		});
+	</script>
+</body>
+</html>
+
+
+

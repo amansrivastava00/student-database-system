@@ -24,7 +24,7 @@ public class AddCourseServlet extends HttpServlet {
 		String coursename = request.getParameter("coursename");
 		String coursefees = request.getParameter("coursefees");
 		int courseduration = Integer.parseInt(request.getParameter("courseduration"));
-		
+		System.out.println("log course  "+courseduration);
 		CourseServiceimpl courseServiceimpl = new CourseServiceimpl();
 		Course course = new Course();
 		course.setCoursename(coursename);
